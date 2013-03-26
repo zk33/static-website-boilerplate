@@ -1,0 +1,10 @@
+.svn
+.sass-cache
+node_modules
+dist/*
+!dist/empty
+templates/*
+!templates/_*.html
+!templates/__base__.html
+data/*
+!data/__init__.json
