@@ -1,0 +1,18 @@
+{
+  "name": "stat-boilerplate",
+  "version": "0.0.0",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "components"
+  ],
+  "dependencies":{
+    "jquery":"1.9.1",
+    "modernizr":"",
+    "html5shiv":"",
+    "backbone":"1.0.0",
+    "underscore":"1.4.4",
+    "zepto":"1.0",
+    "mustache":""
+  }
+}

@@ -2,9 +2,16 @@
 .sass-cache
 node_modules
 dist/*
-!dist/empty
+!dist/assets
+dist/assets/css/*
+!dist/assets/css/.gitkeep
+dist/assets/js/*
+!dist/assets/js/lib/.gitkeep
+dist/assets/img/*
+!dist/assets/img/.gitkeep
 templates/*
 !templates/_*.html
 !templates/__base__.html
 data/*
 !data/__init__.json
+
