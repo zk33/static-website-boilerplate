@@ -1,7 +1,10 @@
 {
-  "contents":{
+  "CSS_DIR":"/assets/css",
+  "JS_DIR":"/assets/js",
+  "JS_LIB_DIR":"/assets/js/lib",
+  "_contents":{
     "index":{
-      "title":"boilerplate index test"
+      "title":"boilerplate index"
     },
     "about":{
       "title":"boilerplate about"

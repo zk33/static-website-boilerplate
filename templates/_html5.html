@@ -1,13 +1,40 @@
 <!DOCTYPE HTML>
-<html lang="ja">
+<html>
+
 <head>
-	<meta charset="UTF-8">
-  {% block meta %}{% endblock %}
-	<title>{{ title }}</title>
-  {% block head_assets %}{% endblock %}
+<meta charset="utf-8">
+
+{% block meta %}{% endblock %}
+
+{% block viewport %}
+<meta name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no">
+{% endblock %}
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<!--[if IE]>
+<meta content="true" name="MSSmartTagsPreventParsing">
+<meta content="false" http-equiv="imagetoolbar">
+<![endif]-->
+
+<title>{% block title %}{% endblock %}</title>
+
+{% block main_css %}
+<link rel="stylesheet" href="{{ CSS_DIR }}/main.css" />
+{% endblock %}
+{% block add_css %}{% endblock %}
+
+<!--[if lt IE 9]>
+<script src="{{ JS_LIB_DIR }}/html5shiv/src/html5shiv.js"></script>
+<![endif]-->
+{% block header_js %}{% endblock %}
 </head>
+
 <body>
-  {% block main %}{% endblock %}
-  {% block footer_assets %}{% endblock %}
+<div id="base">
+{% block base %}
+{% endblock %}
+</div>
+{% block footer_js %}{% endblock %}
 </body>
+
 </html>
