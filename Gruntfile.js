@@ -1,3 +1,4 @@
+/*jslint node: true */
 'use strict';
 
 module.exports = function (grunt) {
@@ -5,6 +6,13 @@ module.exports = function (grunt) {
     require('matchdep').filterDev('grunt-*').forEach(grunt.loadNpmTasks);
 
     grunt.initConfig({
+        jsTarget: ['Gruntfile.js','dist/js/**/*.js'],
+        notify_hoooks: {
+            options: {
+                enabled: true,
+                title: "awesome project"
+            }
+        },
         watch: {
             compass: {
                 files: ['compass/*.{scss,sass}'],
@@ -13,6 +21,10 @@ module.exports = function (grunt) {
             negi: {
                 files: ['data/**/*.{json,txt,csv,md,rst}','templates/**/*'],
                 tasks: ['shell:negi']
+            },
+            jshint: {
+                files: '<%= jsTarget %>',
+                tasks: ['jshint:watch']
             }
         },
         connect: {
@@ -32,12 +44,15 @@ module.exports = function (grunt) {
         },
         jshint: {
             options: {
-                jshintrc: '.jshintrc'
+                jshintrc: '.jshintrc',
+                force:true,
             },
-            all: [
-                'Gruntfile.js',
-                'dist/assets/js/**/*.js',
-            ]
+            watch: {
+                src: '<%= grunt.regarde.changed %>',
+                options: {
+                    devel:true
+                }
+            }
         },
         compass: {
             options: {
